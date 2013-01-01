@@ -1,0 +1,441 @@
+
+/* PROGRAM SOURCE CODES */
+
+		/************************************/
+		   /*PROJECT HOTEL RESERVATION */
+		/************************************/
+
+/* INCLUDED HEADER FILE */
+
+#include <iostream.h>
+#include <time.h>
+#include <graphics.h>
+#include <stdio.h>
+#include <conio.h>
+#include <process.h>
+#include <stdio.h>
+
+void ticketch(int);
+
+struct get_name
+{
+char name[21];
+};
+struct get_data
+{
+get_name name;
+char sex;
+int age;
+};
+
+get_data data[100];
+
+void getdata(int n)
+{
+int x=n;
+for(int i=0;i<x;++i)
+{
+cout<<"\nPLEASE ENTER NAME(S) :"<<endl;
+cout<<i+1<<".";
+gets(data[i].name.name);
+s:
+cout<<"\nPLEASE ENTER SEX(M/F): ";
+cin>>data[i].sex;
+cout<<"\nPLEASE ENTER AGE : ";
+cin>>data[i].age;
+}
+
+}
+
+void putdata(int n);
+void putdata(int n)
+{
+int x=n;
+for(int i=0;i<x;++i)
+{
+cout<<endl;
+cout<<i+1<<"."<<"NAME : ";
+puts(data[i].name.name);
+cout<<" SEX : ";
+cout<<data[i].sex;
+cout<<"\n AGE : ";
+cout<<data[i].age;
+}
+}
+
+
+
+
+
+
+void display1(void)
+{
+textmode(BW40);
+cout<<"\n (HOTEL RESERVSTION DATA BASE)";
+cout<<"\n\n\n\n\n\n\n\n\nProject By: "<<"\nMOHIT MALHOTRA";
+cout<<"\nAJMER SINGH";
+cout<<"\nCLASS:XII";
+cin.get();
+}
+
+void timex(void)
+{
+time_t t;
+time(&t);
+cprintf("\n\r%s", ctime(&t));
+}
+
+void display2(void)
+{
+textbackground(BLACK);
+textcolor(WHITE);
+
+textmode(BW80);
+
+textbackground(BLACK);
+textcolor(WHITE);
+
+
+cout<<"\n\t\t\t\t";
+cprintf(" OBEROI HOTEL");
+
+timex();
+cprintf("\n\rWelcome Dear Guest,");
+}
+
+void display3(void)
+{
+textcolor(WHITE);
+textbackground(BLACK);
+
+cprintf("\n\rYOU WANT TO STAY");
+
+textcolor(RED);
+textbackground(DARKGRAY);
+cout<<"\t\t\t ";
+cprintf("ROOM OFFERED");
+
+
+textcolor(WHITE);
+textbackground(BLACK);
+int ch;
+cprintf("\n\r\rFROM:\r\n");
+cprintf("\r1.HONEY MOON SUIT\n\r2.LUXURY\n\r3.SINGLE\n\r4.DOUBLE");
+cout<<"\n ENTER YOUR CHOICE FROM WHERE YOU WANT TO STAY:";
+cin>>ch;
+switch(ch)
+{	case 1: cout<<"HONEY MOON SUIT";break;
+	case 2: cout<<"LUXURY";break;
+	case 3: cout<<"SINGLE";break;
+	case 4: cout<<"DOUBLE";break;
+	default:cout<<"sorry!! wrong choice.terminating";exit(0);break;
+}
+
+
+textcolor(GREEN + BLINK);
+textbackground(BLACK);
+
+cout<<"\t\t\t\t\t ";
+cprintf("BOOKING-747");
+
+cout<<"\n\t\t\t\t\t\t";
+cprintf("FIRST FLOOR .-320");
+
+cout<<"\n\t\t\t\t\t\t";
+cprintf("SECOND FLOOR.-380");
+
+textcolor(WHITE);
+textbackground(BLACK);
+
+
+
+textcolor(LIGHTMAGENTA+BLINK);
+textbackground(BLACK);
+
+textcolor(BROWN);
+
+
+textcolor(BROWN+BLINK);
+
+
+textcolor(WHITE);
+textbackground(BLACK);
+cprintf("\n\r========================================================================");
+}
+
+char x;
+int n;
+char name[31];
+
+
+void dispchennai(void)
+{
+int ch1;
+textcolor(RED);
+cout<<"\nÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ ";
+cout<<"\n ³ SN ³ROOM.CODE³ TIMING ³DAY ³ FARE ³ ";
+cout<<"\n ³ 1 ³1011 ³8:30 ³9:50 ³ALL(EXCEPT SUN) ³Rs.750+2656tax=Rs.3405/-³ ";
+cout<<"\n ³ 2 ³2987 ³11:45 ³13:50 ³ALL ³Rs.650+2309tax=Rs.2951/-³ ";
+cout<<"\n ³ 3 ³3465 ³14:00 ³15:20 ³ONLY SUNDAY ³Rs.575+2036tax=Rs.2611/-³ ";
+cout<<"\nÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ";
+
+cout<<"\n\n\rPLEASE ENTER A CHOICE(1/2/3): ";
+cin>>ch1;
+cout<<"\nWOUL";
+
+cout<<" DO YOU LIKE TO CONFIRM IT(y/n): ";
+cin>>x;
+if(x=='y' || x=='Y')
+{
+switch(ch1)
+{
+case 1:
+
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*3405<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 2:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2951<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 3:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2611<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+default:
+cout<<"\nSorry wrong choice.Terminating.";
+getch();
+exit(0);
+
+
+}
+}
+else
+cout<<"\nSorry Terminating.";
+getch();
+exit(0);
+
+
+}
+
+void disp_trivandrum(void)
+{
+int ch2;
+
+textcolor(RED);
+cout<<"\nÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ ";
+cout<<"\n ³ SN³H.CODE³ TIMING ³DAY ³ FARE ³ ";
+cout<<"\n ³ 1 ³9241 ³24hrs ³24hrs ³ALL(EXCEPT SUN) ³Rs.725+2557tax=Rs.3292/-³ ";
+cout<<"\n ³ 2 ³8001 ³24hrs ³24hrs ³ALL ³Rs.625+2213tax=Rs.2838/-³ ";
+cout<<"\n ³ 3 ³6237 ³24hrs ³24hrs ³ONLY SUNDAY ³Rs.550+1947tax=Rs.2697/-³ ";
+cout<<"\nÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ";
+
+
+
+cout<<"\n\n\rPLEASE ENTER A CHOICE(1/2/3): ";
+cin>>ch2;
+cout<<"\nWOULD YOU LIKE TO CONFIRM IT(y/n): ";
+cin>>x;
+if(x=='y' || x=='Y')
+{
+switch(ch2)
+{
+case 1:
+
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*3292<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 2:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2838<<"/-";
+cout<<"\n(Press Enter to recieve your RECIEPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 3:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nTRAVELLING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2467<<"/-";
+cout<<"\n(Press Enter to recieve your RECIEPT)";
+getch();
+ticketch(n);
+getch();
+break;
+default:
+cout<<"\nSorry wrong choice.Terminating.";
+getch();
+exit(0);
+
+
+}
+}
+else
+cout<<"\nSorry Terminating.";
+getch();
+exit(0);
+
+}
+void disp_ahemdabad(void)
+{
+int ch2;
+
+textcolor(RED);
+cout<<"\nÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ ";
+cout<<"\n ³ SN ³F.CODE³ TIMING ³DAY ³ FARE ³ ";
+cout<<"\n ³ 1 ³9241  24HRS ³ALL(EXCEPT SUN) ³Rs.725+2557tax=Rs.3292/-³ ";
+cout<<"\n ³ 2 ³8001 ³24HRS ³ALL ³Rs.625+2213tax=Rs.2838/-³ ";
+cout<<"\n ³ 3 ³6237 ³24HRS ³ONLY SUNDAY ³Rs.550+1947tax=Rs.2697/-³ ";
+cout<<"\nÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ";
+
+
+
+cout<<"\n\n\rPLEASE ENTER A CHOICE(1/2/3): ";
+cin>>ch2;
+cout<<"\nWOULD YOU LIKE TO CONFIRM IT(y/n): ";
+cin>>x;
+if(x=='y' || x=='Y')
+{
+switch(ch2)
+{
+case 1:
+
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE TRIP:Rs. "<<n*3292<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 2:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2838<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+case 3:
+cout<<"\nPLEASE ENTER THE NO. OF PERSONS"<<"\nBOOKING\t\t\t :";
+cin>>n;
+getdata(n);
+cout<<"\nTOTAL COST OF THE STAY:Rs. "<<n*2467<<"/-";
+cout<<"\n(Press Enter to recieve your RECEIPT)";
+getch();
+ticketch(n);
+getch();
+break;
+default:
+cout<<"\nSorry wrong choice.Terminating.";
+getch();
+exit(0);
+
+
+}
+}
+else
+cout<<"\nSorry Terminating.";
+getch();
+exit(0);
+
+}
+
+
+void ticketch(int n)
+{
+int x=n;
+clrscr();
+cout<<"\nYOUR BOOKING"<<endl;
+putdata(x);
+
+
+}
+
+void display4(int ch)
+{
+clrscr();
+switch(ch)
+{
+case 1:
+dispchennai();
+break;
+case 2:
+disp_ahemdabad();
+break;
+case 3:
+disp_trivandrum();
+default:
+cout<<"Invalid Choice.Sorry Terminating.";
+getch();
+exit(0);
+}
+
+
+}
+
+int main()
+{
+clrscr();
+int ch;
+
+
+display1();
+
+
+while(1)
+{
+display2();
+display3();
+textcolor(YELLOW);
+cprintf("\n\n\n\n\rPLEASE ENTER CHOICE(1/2): ");
+cin>>ch;
+display4(ch);
+
+textcolor(WHITE);
+textbackground(BLACK);
+
+clrscr();
+
+char cont='y';
+cout<<"\n\n";
+cprintf("Do you want to continue Booking RECEIPT??(Y/N)");
+cin>>cont;
+
+if(cont=='n' || cont=='N') break;
+clrscr();
+}
+
+return 0;
+}
+
